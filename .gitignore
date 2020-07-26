@@ -1,0 +1,8 @@
+# Build output.
+.gradle/
+build/
+out/
+
+# Intellij.
+.idea/
+*.iml
