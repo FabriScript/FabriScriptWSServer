@@ -59,6 +59,12 @@ publishing {
             version = "${project.version}"
 
             from components.java
+            artifact(javadocJar) {
+                classifier "javadoc"
+            }
+            artifact(sourceJar) {
+                classifier "sources"
+            }
         }
     }
 
