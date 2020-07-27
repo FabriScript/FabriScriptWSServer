@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
 
 public class TestFabriScriptImpl implements IFabriScript {
     @Override
@@ -31,5 +34,10 @@ public class TestFabriScriptImpl implements IFabriScript {
     @Override
     public boolean runScript(String name) {
         return new File(name).exists();
+    }
+
+    @Override
+    public List<ApiPlayer> getPlayerList() {
+        return Collections.singletonList(new ApiPlayer(UUID.randomUUID(), "Notch"));
     }
 }

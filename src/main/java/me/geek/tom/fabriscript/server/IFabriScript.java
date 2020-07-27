@@ -1,5 +1,7 @@
 package me.geek.tom.fabriscript.server;
 
+import java.util.List;
+
 /**
  * Interface to communicate with the server-side instance of the mod.
  */
@@ -21,4 +23,11 @@ public interface IFabriScript {
      * @return true if the script was executed successfully.
      */
     boolean runScript(String name);
+
+    /**
+     * Fetch a list of players on the server used to display in the atom package.
+     *
+     * @return A list of players on the server, or null if there was an error.
+     */
+    List<ApiPlayer> getPlayerList();
 }
