@@ -1,10 +1,11 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'net.minecrell.licenser' version '0.4.1'
 }
 
 group 'me.geek.tom'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 repositories {
     mavenCentral()
@@ -46,10 +47,22 @@ jar {
                 'Implementation-Timestamp': new Date().format('yyyy-MM-dd\'T\'HH:mm:ssZ')
         )
     }
+
+    from 'LICENCE'
 }
 
 build.dependsOn('sourceJar')
 build.dependsOn('javadocJar')
+
+license {
+    header = project.file('HEADER')
+    ext {
+        name = 'FabriScriptWSServer'
+        year = 2020
+        owner = "Tom_The_Geek"
+    }
+    include '**/*.java'
+}
 
 publishing {
     publications {
